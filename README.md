@@ -112,7 +112,6 @@ Este projeto foi desenvolvido como trabalho acadêmico para o curso de **Pós-Gr
 
 ## Autor
 
-Fabio Alves dos Santos \
+Gustavo Braulio \
 Desenvolvido como projeto final da disciplina **Práticas de Implementação e Evolução de Software**. \
-Professor Filipe Tório \
-Julho 2025
+
