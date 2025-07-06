@@ -1,117 +1,116 @@
-# MyFinance Web - Sistema de Controle Financeiro Pessoal
+# MyFinance Web
 
-![ASP.NET Core](https://img.shields.io/badge/ASP.NET%20Core-6.0-blue)
-![Entity Framework](https://img.shields.io/badge/Entity%20Framework-6.0-green)
-![SQLite](https://img.shields.io/badge/SQLite-3.0-lightgrey)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-5.0-purple)
+Gerencie suas finanças pessoais de forma simples, visual e eficiente.
 
-## Descrição do Projeto
+---
 
-O **MyFinance Web** é um sistema de controle financeiro pessoal desenvolvido para ajudar famílias a registrar suas receitas e despesas, possibilitando uma análise detalhada dos gastos e um melhor planejamento financeiro.
+## Visão Geral
 
-### Objetivo
+**MyFinance Web** é um aplicativo pensado para famílias que buscam registrar entradas e saídas de dinheiro, acompanhar o fluxo financeiro mensal e tomar decisões mais conscientes sobre o orçamento.
 
-Resolver o problema identificado pela pesquisa que mostra que **52% dos brasileiros não possuem ou não sabem como montar um planejamento financeiro** para os próximos anos, oferecendo uma ferramenta simples e eficaz para organização das finanças pessoais.
+---
 
-## Arquitetura Utilizada
+## Por que usar?
 
-### Padrão MVC (Model-View-Controller)
-- **Models**: Entidades de dados (PlanoContas, Transacao)
-- **Views**: Interface do usuário com Razor Pages
-- **Controllers**: Lógica de negócio e controle de fluxo
+Segundo pesquisas recentes, mais da metade dos brasileiros não sabe como planejar suas finanças para os próximos anos. O MyFinance Web foi criado justamente para preencher essa lacuna, oferecendo uma interface intuitiva e ferramentas práticas para controle financeiro.
 
-### Camadas da Aplicação
-```
-├── Controllers/           # Controladores MVC
-├── Models/               # Modelos de dados
-├── Views/                # Interfaces de usuário
-├── Data/                 # Contexto do banco de dados
-├── wwwroot/              # Arquivos estáticos (CSS, JS, imagens)
-└── docs/                 # Documentação e scripts
-```
+---
 
-### Banco de Dados
-- **ORM**: Entity Framework Core 6.0
-- **Banco**: SQLite (desenvolvimento)
-- **Migrations**: Controle de versão do schema
-- **Relacionamentos**: Transacao → PlanoContas (FK)
+## Como está estruturado?
 
-## Tecnologias
+O projeto segue o padrão **MVC** (Model-View-Controller):
 
-### Backend
-- **ASP.NET Core 6.0 MVC** - Framework web
-- **Entity Framework Core 6.0** - ORM para acesso a dados
-- **SQLite** - Banco de dados leve e portátil
-- **C# 10** - Linguagem de programação
+- **Modelos:** Estruturas de dados como Plano de Contas e Transações
+- **Visualizações:** Páginas dinâmicas criadas com Razor Pages
+- **Controladores:** Responsáveis pelo processamento das regras de negócio
 
-### Frontend
-- **HTML5 & CSS3** - Estrutura e estilização
-- **Bootstrap 5** - Framework CSS responsivo
-- **JavaScript ES6** - Interatividade client-side
-- **Chart.js** - Biblioteca para gráficos interativos
-- **FontAwesome** - Ícones modernos
+### Organização dos arquivos
+├── Controllers/   # Controladores MVC   
+├── Models/   # Modelos de dados  
+├── Views/   # Interfaces de usuário  
+├── Data/   # Contexto do banco de dados  
+├── wwwroot/   # Arquivos estáticos (CSS, JS, imagens)  
+└── docs/   # Documentação e scripts  
 
-### Ferramentas de Desenvolvimento
-- **.NET CLI** - Interface de linha de comando
-- **Entity Framework CLI** - Gerenciamento de migrations
-- **Visual Studio / VS Code** - IDEs recomendadas
 
-## Como Configurar para Startup do Projeto
+---
 
-### Pré-requisitos
-- [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet/6.0)
-- Editor de código (Visual Studio, VS Code, etc.)
+## Banco de Dados
 
-### 1️ - Clonar o Repositório
-```bash
-git clone <url-do-repositorio>
-cd myfinance-web-dotnet-o8/myfinance-web-netcore
-```
+- **ORM:** Entity Framework Core 6.0
+- **Banco:** SQLite (ambiente de desenvolvimento)
+- **Migrations:** Controle de versões do banco
+- **Relacionamento:** Cada transação está vinculada a um plano de contas
 
-### 2️ - Restaurar Dependências
-```bash
-dotnet restore
-```
+---
 
-### 3️ - Instalar Ferramenta Entity Framework (se necessário)
-```bash
-dotnet tool install --global dotnet-ef --version 6.0.25
-```
+## Stack de Tecnologias
 
-### 4️ - Configurar String de Conexão
-O arquivo `appsettings.json` já está configurado para SQLite:
-```json
-{
-  "ConnectionStrings": {
-    "DefaultConnection": "Data Source=myfinance.db"
-  }
-}
-```
+| Camada        | Tecnologias e Ferramentas           |
+|---------------|-------------------------------------|
+| Backend       | ASP.NET Core 6, EF Core 6, C# 10, SQLite |
+| Frontend      | HTML5, CSS3, Bootstrap 5, JS ES6, Chart.js, FontAwesome |
+| Dev Tools     | .NET CLI, EF CLI, Visual Studio/VS Code |
 
-### 5️ - Criar e Aplicar Migrations
-```bash
-# Criar migration inicial (se não existir)
-dotnet ef migrations add InitialCreate
+---
 
-# Aplicar migrations ao banco
-dotnet ef database update
-```
+## Guia de Instalação
 
-### 6️ - Executar o Projeto
-```bash
-dotnet run
-```
+### Requisitos
 
-### 7️ - Acessar a Aplicação
-- **URL**: https://localhost:7006
-- **HTTP**: http://localhost:5088
+- .NET 6.0 SDK instalado
+- Editor de código (Visual Code ou similar)
 
-## Licença
+### Passo a passo
 
-Este projeto foi desenvolvido como trabalho acadêmico para o curso de **Pós-Graduação em Engenharia de Software** da **PUC Minas**.
+1. **Clone o repositório**
+    ```
+    git clone <url-do-repositorio>
+    cd myfinance-web-dotnet-o8/myfinance-web-netcore
+    ```
 
-## Autor
+2. **Baixe as dependências**
+    ```
+    dotnet restore
+    ```
 
-Gustavo Braulio \
-Desenvolvido como projeto final da disciplina **Práticas de Implementação e Evolução de Software**. \
+3. **(Opcional) Instale o Entity Framework CLI**
+    ```
+    dotnet tool install --global dotnet-ef --version 6.0.25
+    ```
+
+4. **Verifique a configuração do banco**
+    O arquivo `appsettings.json` já vem pronto para SQLite:
+    ```
+    {
+      "ConnectionStrings": {
+        "DefaultConnection": "Data Source=myfinance.db"
+      }
+    }
+    ```
+
+5. **Crie e atualize o banco de dados**
+    ```
+    dotnet ef migrations add InitialCreate   # Caso ainda não exista
+    dotnet ef database update
+    ```
+
+6. **Inicie a aplicação**
+    ```
+    dotnet run
+    ```
+
+7. **Acesse no navegador**
+    - HTTPS: https://localhost:7006
+    - HTTP:  http://localhost:5088
+
+---
+
+## Créditos e Licença
+
+Este software foi desenvolvido como parte do curso de Pós-Graduação em Engenharia de Software (PUC Minas), na disciplina de Práticas de Implementação e Evolução de Software.
+
+**Autor:** Gustavo Braulio
+
+---
 
