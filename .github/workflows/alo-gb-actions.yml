@@ -1,0 +1,13 @@
+name: Exemplo de fluxo de Trabalho 
+
+on: 
+  workflow_dispatch: 
+
+jobs:
+  acao_inicial_job: 
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Imprimir Olá
+        run: echo "Olá"
+      - name: Imprimir Tchau 
+        run: echo "Tchau"
